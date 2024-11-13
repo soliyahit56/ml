@@ -12,7 +12,12 @@ if st.button("classify"):
         data=[user_input]
         vect=cv.transform(data).toarray()
         pred=model.predict(vect)
-        if pred[0]:
+        if pred[0]==0:
             st.success("this email is not spem ")
         else:
             st.error("this email is spem")
+
+# streamlit run app.py
+#pip install -r requirements.txt
+#pythom -m venv myenv 
+#.\myenv\Scripts\activate 
